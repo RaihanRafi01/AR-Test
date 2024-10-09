@@ -65,7 +65,7 @@ In `android/build.gradle`, add the following in `buildscript`:
    }
    ```
 
-Replace `subprojects` with the following two configurations:
+Replace existing `subprojects` with the following two configurations:
 
 - Force all subprojects to use Kotlin 1.8.0:
 
@@ -97,11 +97,24 @@ Replace `subprojects` with the following two configurations:
       }
   }
   ```
-
 ### 7. Ensure ARCore Support
 Ensure that your device supports ARCore by checking here: https://developers.google.com/ar/devices
 
-### 8. Sample Code: Displaying a 3D Object
+### 8. Clean and Rebuild
+
+- From Android directory open a Terminal (Right click on android folder from Project and click Open In > Terminal)
+   ```bash
+  ./gradlew clean build
+  ```
+- From root directory
+  ```bash
+  flutter clean
+  flutter run
+  ```
+
+
+
+### 9. Sample Code: Displaying a 3D Object
 Create a new Dart file `arScreen.dart` with the following code:
 
    ```dart
@@ -243,5 +256,3 @@ Call the `AR_Test` class from `main.dart`:
    }
    ```
 
-### 9. Running the App
-Make sure you have an ARCore-supported device to run the app. You can check device compatibility here: https://developers.google.com/ar/devices.
