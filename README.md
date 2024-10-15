@@ -112,7 +112,13 @@ Ensure that your device supports ARCore by checking here: https://developers.goo
   flutter run
   ```
 
+### Important note 
 
+- Here I have created the AR Application with the help of ARCore flutter plugin
+- In ARCore flutter plugin, inside the ArCoreReferenceNode class, object3DFileName requires Filename of sfb object in assets folder (generated with Import Sceneform Asset) https://developers.google.com/ar/develop/java/sceneform/import-assets
+- To import and work with 3D models in Sceneform, ensure you have installed the Google Sceneform Tools (Beta) plugin.
+- The Google Sceneform Tools (Beta) plugin only compatible with IntelliJ IDEA (Ultimate, Community)
+- The Google Sceneform Tools (Beta) plugin, which was once used for building AR (Augmented Reality) apps using Sceneform, has been deprecated by Google. As of 2020.
 
 ### 9. Sample Code: Displaying a 3D Object
 Create a new Dart file `arScreen.dart` with the following code:
