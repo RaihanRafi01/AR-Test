@@ -48,8 +48,33 @@ class _AR_TestState extends State<AR_Test> {
     arCoreController = controller;
     print('ARCore Controller initialized');
 
-    // Add AR content (cube) after a delay
-    _addCube();
+    _addObjectOrCube();
+  }
+
+
+  void _addObjectOrCube() async {
+    await Future.delayed(const Duration(seconds: 2)); // Delay for ARCore session initialization
+
+    try {
+      print("Attempting to add 3D object from assets");
+
+      // Adding the 3D object from assets
+      final node = ArCoreReferenceNode(
+        name: "3d_object",
+        object3DFileName: "andy.sfb", // Path to the 3D model file in assets
+        position: vector_math.Vector3(0, 0, -1), // Position in front of the user
+        scale: vector_math.Vector3(0.5, 0.5, 0.5), // Adjust the scale if necessary
+      );
+
+      await arCoreController.addArCoreNodeWithAnchor(node);
+      print("3D object added to AR scene");
+    } catch (e) {
+      print("Error adding 3D object: $e");
+      print("Falling back to adding cube");
+
+      // Fallback to the cube if there's an error
+      _addCube();
+    }
   }
 
   // Function to add a cube to the AR scene
