@@ -46,9 +46,15 @@ class _AR_TestState extends State<AR_Test> {
   // Called when ARCore view is created
   void _onARViewCreated(ArCoreController controller) {
     arCoreController = controller;
+    arCoreController.onPlaneTap = _handleTap;
     print('ARCore Controller initialized');
 
     _addObjectOrCube();
+  }
+  void _handleTap(List<ArCoreHitTestResult> hits) {
+    if (hits.isNotEmpty) {
+      print('Object tapped!!!!');
+    }
   }
 
 

@@ -1,3 +1,5 @@
+import 'package:ar_test/aRPaperPlaneTutorial.dart';
+import 'package:ar_test/arFlutter.dart';
 import 'package:ar_test/arScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -31,11 +33,34 @@ class HomeScreen extends StatelessWidget {
                 // Navigate to the notification screen when pressed
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => AR_Test()),
+                  MaterialPageRoute(builder: (context) => const AR_Test()),
                 );
               },
               child: Text('Go to AR Screen'),
             ),
+            SizedBox(height: 40),
+            ElevatedButton(
+              onPressed: () {
+                // Navigate to the notification screen when pressed
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ARPaperPlaneTutorial()),
+                );
+              },
+              child: Text('Go to Tapped screen'),
+            ),
+            const SizedBox(height: 40),
+            /*ElevatedButton(
+              onPressed: () {
+                // Navigate to the notification screen when pressed
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ARFlutter()),
+                );
+              },
+              child: const Text('Go to Tapped screen AR Flutter'),
+            ),*/
+
           ],
         ),
       ),
